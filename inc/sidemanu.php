@@ -68,8 +68,15 @@
                   <p>Add New Doctor</p>
                 </a>
               </li>
-
-              <ul class="nav nav-treeview">
+              <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+               department Master
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="departmentname.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -77,41 +84,47 @@
                 </a>
               </li>
            
+
+             
             
             </ul>
-          </li>
-          <li class="nav-item">
+
+            <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-table"></i>
+              <i class="nav-icon fas fa-edit"></i>
               <p>
-                Tables
+               test Master
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/tables/simple.html" class="nav-link">
+                <a href="testname.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Simple Tables</p>
+                  <p>test name</p>
                 </a>
               </li>
+
               <li class="nav-item">
-                <a href="pages/tables/data.html" class="nav-link">
+                <a href="testcharges.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>DataTables</p>
+                  <p>test charge</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="pages/tables/jsgrid.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>jsGrid</p>
-                </a>
-              </li>
-            </ul>
           </li>
+
+         
+        
          
          
-       </ul>     
+       </ul>
+       <li class="nav-item">
+                <a href="companysetting.php" class="nav-link">
+                <i class="nav-icon fas fa-edit"></i>
+                  <p>company settings</p>
+                </a>
+              </li>
+           
       </nav>
       <!-- /.sidebar-menu -->
     </div>
