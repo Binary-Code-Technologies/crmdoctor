@@ -78,7 +78,7 @@ if($_GET['action']==1){
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Doctor Name</label>
-                  <input type="text" name="doc_name" id="doc_name" value="<?php echo $doc_name; ?>" placeholder="Please Enter Doctor Name" class="form-control">
+                  <input type="text" name="doc_name" id="doc_name" value="<?php $doc_name='';echo $doc_name; ?>" placeholder="Please Enter Doctor Name" class="form-control">
                 </div>
                 <!-- /.form-group -->
                 <div class="form-group">

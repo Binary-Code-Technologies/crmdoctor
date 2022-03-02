@@ -3,7 +3,7 @@ session_start();
 
 error_reporting(0);
 
-if(isset($_SESSION['usertype']) && isset($_SESSION['usertype']) != "" && isset($_SESSION['loginid']) && isset($_SESSION['loginid']) != "")
+if( isset($_SESSION['loginid']) && isset($_SESSION['loginid']) != "")
 	{
 		date_default_timezone_set("Asia/Kolkata");
 		include("conn.php");	
