@@ -2,7 +2,38 @@
   <!-- Main Sidebar Container -->
   
   <?php include('inc/sidemanu.php'); ?>
+<?php 
+if($_GET['action']==1){
+	$msg = "Data Has been Inserted Successfully";
+	}
+	if($_GET['action']==2){
+	$msg = "Data Has been Updated Successfully";
+	}
+	if($_GET['action']==3){
+	$msg = "Data Has been Deleted Successfully";
+	}
 
+  if($_GET['doc_id']!=""){
+    $keyvalue = $_GET['doc_id'];
+  }else{
+    $keyvalue = 0;
+  }
+
+  if(isset($_POST['submit'])){
+    $doc_name = $_POST['doc_name'];
+    $doc_email = $_POST['doc_email'];
+    $doc_mobile = $_POST['doc_mobile'];
+    $doc_address = $_POST['doc_address'];
+    $doc_img = $_POST['doc_img'];
+    $doc_name = $_POST['doc_name'];
+    $doc_name = $_POST['doc_name'];
+    $doc_name = $_POST['doc_name'];
+
+  }
+
+
+
+?>
   
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -41,7 +72,7 @@
             </div>
           </div>
           <!-- /.card-header -->
-          <form action="">
+          <form action="" method="POST">
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
