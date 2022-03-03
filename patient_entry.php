@@ -27,11 +27,9 @@ $keyvalue=$_GET['test_id'];
 if(isset($_POST['submit'])){
    $test_name = $_POST['test_name'];
    $charge = $_POST['charge'];
-
-   
    if($keyvalue==0){
 
-    $data = mysqli_query($conn,"SELECT * FROM  test_entry where test_name='$test_name'");
+      $data = mysqli_query($conn,"SELECT * FROM  test_entry where test_name='$test_name'");
 	  $get = mysqli_num_rows($data);
    if($get == $keyvalue){
     

@@ -62,6 +62,12 @@
               </p>
             </a>
             <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="companysetting.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Company Settings</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="add_doctor.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
@@ -69,62 +75,39 @@
                 </a>
               </li>
               <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-               department Master
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
                 <a href="departmentname.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>department name</p>
+                  <p>Department Master</p>
                 </a>
               </li>
-           
-
-             
-            
-            </ul>
-
-            <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-edit"></i>
-              <p>
-               test Master
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="testname.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>test name</p>
+                  <p>Test Master</p>
                 </a>
               </li>
-
-              <li class="nav-item">
-                <a href="testcharges.php" class="nav-link">
+             
+            </ul>
+            </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+                Patient
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="patient_entry.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>test charge</p>
+                  <p>Patient Entry</p>
                 </a>
               </li>
-          </li>
-
-         
-        
-         
-         
-       </ul>
-       <li class="nav-item">
-                <a href="companysetting.php" class="nav-link">
-                <i class="nav-icon fas fa-edit"></i>
-                  <p>company settings</p>
-                </a>
-              </li>
-           
+              
+             
+            </ul>
+            </li>
       </nav>
       <!-- /.sidebar-menu -->
     </div>

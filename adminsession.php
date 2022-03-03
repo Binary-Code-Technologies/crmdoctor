@@ -3,7 +3,7 @@ session_start();
 
 error_reporting(0);
 
-if( isset($_SESSION['loginid']) && isset($_SESSION['loginid']) != "")
+if(isset($_SESSION['loginid']) && isset($_SESSION['loginid']) != "")
 	{
 		date_default_timezone_set("Asia/Kolkata");
 		include("conn.php");	
@@ -11,11 +11,9 @@ if( isset($_SESSION['loginid']) && isset($_SESSION['loginid']) != "")
 		include_once("lib/getval.php");
 		$cmn = new Comman();
 		$ipaddress = $cmn->get_client_ip();
-		//$userid = $_SESSION['userid'];
-		$loginid = $_SESSION['loginid'];
 		
-		//$usertype = $_SESSION['usertype'];		
-		//$websiteid = $_SESSION['websiteid'] ;
+		$loginid = $_SESSION['loginid'];
+	
 		$createdate = date('Y-m-d');	
 		
 		
