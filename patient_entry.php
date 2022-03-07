@@ -468,4 +468,25 @@ if(isset($_POST['submit'])){
              }          
             });//ajax close		
          } 
+
+     function getpayment(){
+         var pat_id = jQuery("#mpat_id").val();
+        // alert(pat_id);
+         var paytype = jQuery("#paytype").val();
+         var paidamount = jQuery("#paidamount").val();
+         var paydate = jQuery("#paydate").val(); 
+         $.ajax({
+            type: 'POST',
+            url: 'updatepaymentpatient.php',
+            data: 'pat_id='+pat_id+'&paytype='+paytype+'&paidamount='+paidamount+'&paydate='+paydate,
+            dataType: 'html',
+            success: function(data){
+       // alert(data);
+         $("#editmodel").modal("hide");       	
+         
+          location='patient_entry.php?action=1'; 
+             }
+          
+            });//ajax close	  
+     }    
   </script>

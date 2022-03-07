@@ -2,10 +2,9 @@
     <!-- Brand Logo -->
     <?php
 
-$show = mysqli_query($conn,"SELECT * FROM company_settings");
-$rowcom = mysqli_fetch_array($show);
+      $show = mysqli_query($conn,"SELECT * FROM company_settings");
+      $rowcom = mysqli_fetch_array($show);
 ?>
-    
     <a href="dashboard.php" class="brand-link">
       <img src="./uploaded/<?php echo $rowcom['com_img']; ?>" alt="<?php echo $rowcom['com_img']; ?>" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light"><?php echo $rowcom['com_name']; ?></span>
@@ -119,9 +118,7 @@ $rowcom = mysqli_fetch_array($show);
                   <i class="far fa-circle nav-icon"></i>
                   <p>Patient Entry</p>
                 </a>
-              </li>
-              
-             
+              </li>  
             </ul>
             </li>
             <li class="nav-item">
@@ -139,8 +136,6 @@ $rowcom = mysqli_fetch_array($show);
                   <p>Theraphy Test Entry</p>
                 </a>
               </li>
-              
-             
             </ul>
             </li>
       </nav>

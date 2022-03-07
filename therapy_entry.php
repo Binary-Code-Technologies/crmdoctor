@@ -166,7 +166,17 @@
                   <!-- /.form-group -->
                   <div class="form-group">
                      <label>Patient Name</label>
-                     <input type="text" name="patient_name" id="patient_name" Value="<?php echo $patient_name; ?>"  placeholder="Please Enter Patient Name" class="form-control">
+                     <select name="pat_id" id="pat_id" onchange="GetDetail(this.value);" class="form-control select2">
+                        <option value="">-Select-</option>
+                     <?php
+                          $patient = mysqli_query($conn,"SELECT * FROM patient_entry order by pat_id desc");
+                          while($row = mysqli_fetch_array($patient)){
+                            
+                         ?>
+                        <option value="<?php echo $row['pat_id']; ?>"><?php echo ucwords($row['patient_name']);?></option>
+                        <?php } ?>
+                     </select>
+                     <script>document.getElementById('pat_id').value='<?php echo $pat_id; ?>';</script> 
                   </div>
                </div>
                <div class="col-md-3">
@@ -180,7 +190,7 @@
                   <!-- /.form-group -->
                   <div class="form-group">
                      <label>S/W/D of</label>
-                     <input type="text" name="pat_parents" id="pat_parents" Value="<?php echo $pat_parents; ?>"  placeholder="Please Enter S/W/D of" class="form-control">
+                     <input type="text" name="pat_parents" id="pat_parents" Value="<?php echo ucwords($pat_parents); ?>"  placeholder="Please Enter S/W/D of" class="form-control">
                   </div>
                </div>
                <div class="col-md-3">
@@ -210,13 +220,8 @@
                   <!-- /.form-group -->
                   <div class="form-group">
                      <label>Gender</label>
-                     <select name="gender" id="gender" class="form-control select2">
-                        <option value="">-Select-</option>
-                        <option value="Male">Male</option>
-                        <option value="Female">Female</option>
-                        <option value="Other">Other</option>
-                     </select>
-                     <script>document.getElementById('gender').value='<?php echo $gender; ?>';</script> 
+                     <input type="text" name="gender" id="gender"  value="<?php echo $gender; ?>"  placeholder="Please Enter Gender" class="form-control">
+
                   </div>
                </div>
                <div class="col-md-3">
@@ -239,24 +244,15 @@
                   <!-- /.form-group -->
                   <div class="form-group">
                      <label>Referral Name</label>
-                     <input type="text" name="refer_name" id="refer_name" value="<?php echo $refer_name; ?>"  placeholder="Please Enter Referral Name" class="form-control">
+                     <input type="text" name="refer_name" id="refer_name" value="<?php echo ucwords($refer_name); ?>"  placeholder="Please Enter Referral Name" class="form-control">
                   </div>
                </div>
                <div class="col-md-3">
                   <!-- /.form-group -->
                   <div class="form-group">
                      <label>Doctor's Name</label>
-                     <select name="doc_id" id="doc_id" class="form-control select2">
-                        <option value="">-Select-</option>
-                        <?php
-                           $data = mysqli_query($conn,"SELECT * FROM doctor_entry");
-                           while($get = mysqli_fetch_array($data)){
-                           
-                           ?>
-                        <option value="<?php echo $get['doc_id']; ?>"><?php echo $get['doc_name']; ?></option>
-                        <?php } ?>
-                     </select>
-                     <script>document.getElementById('doc_id').value='<?php echo $doc_id; ?>';</script>
+                     <input type="text" name="doc_id" id="doc_id" value="<?php echo $doc_id; ?>"  placeholder="Please Enter Doctor  Name" class="form-control">
+
                   </div>
                </div>
                <div class="col-md-3">
@@ -438,26 +434,37 @@
         		  });//ajax close
         	}//confirm close
    }
-   function Getage(data){
-   //alert('hello')
-   var pat_dob = jQuery('#pat_dob').val();
-   //var opddate = jQuery('#opddate').val();
+  
+   function GetDetail(pat_id){
+
+      $.ajax({
+                        type: 'get',
+                        url: 'patientDetails.php',
+                        data: 'pat_id='+pat_id,
+                        dataType: 'html',
+          success: function(data){
+            var myArray = data.split("|");
+             // jQuery('#patient_id').val(data);
+
+            jQuery('#patient_id').val(myArray[0]);
+            jQuery('#pat_parents').val(myArray[1]);
+            jQuery('#pat_dob').val(myArray[2]);
+            jQuery('#pat_age').val(myArray[3]);
+            jQuery('#pat_email').val(myArray[4]);
+             jQuery('#gender').val(myArray[5]).trigger("select2:updated");
+            jQuery('#pat_mobile').val(myArray[6]);
+            jQuery('#full_address').val(myArray[7]);
+            jQuery('#refer_name').val(myArray[8]);
+            jQuery("#pat_date").val(myArray[9]);
+            jQuery("#reporting_time").val(myArray[10]);
+            jQuery("#doc_id").val(myArray[11]).trigger("select2:updated");
+            jQuery("#pat_amount").val(myArray[12]);
+
+           }
+          });//ajax close
+    
+   }
    
-   var dob = new Date(pat_dob);
-   //calculate month difference from current date in time
-   var month_diff = Date.now() - dob.getTime();
    
-   //convert the calculated difference in date format
-   var age_dt = new Date(month_diff); 
-   
-   //extract year from date    
-   var year = age_dt.getUTCFullYear();
-   
-   //now calculate the age of the user
-   var age = Math.abs(year - 1970);
-   // alert(age);
-   jQuery('#pat_age').val(age);
-   //display the calculated age
-   //document.write("Age of the date entered: " + age + " years");
-   }    
+
 </script>

@@ -39,7 +39,7 @@
           </div>
           <!-- /.card-header -->
          
-          <input type="hidden" name="pat_id" id="mpat_id" value="<?php echo $keyvalue; ?>">
+          <input type="hidden" name="pat_id" id="mpat_id" value="<?php echo $pat_id; ?>">
           <div class="card-body">
             <div class="row">
               <div class="col-md-6">
@@ -119,7 +119,7 @@
         <div class="row">
             
                 <div class="col-md-4">
-                   <center><button type="submit" name="submit" class="btn btn-success col submit"><span>Payment</span></button> </center>
+                   <center><button type="submit" name="submit" onClick="getpayment();" class="btn btn-success col submit"><span>Payment</span></button> </center>
                 </div>
                <div class="col-md-4">
                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
