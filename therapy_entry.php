@@ -1,5 +1,7 @@
 <?php
    include('adminsession.php');
+   include('conn.php');
+
    
    $btn_name = 'Submit';
    if($_GET['action']==1){
@@ -105,6 +107,7 @@
 <?php include('inc/header.php'); ?>
 <!-- Main Sidebar Container -->
 <?php include('inc/sidemanu.php'); ?>
+<!--<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">>-->
 <style>
    span.select2-selection.select2-selection--single{
    height:38px;
@@ -278,7 +281,9 @@
    </div>
    </div>
    <!-- /.card-header -->
-   <form action="" method="POST">
+   
+   
+   <form  role="form" action="addtest.php" method="POST">
    <input type="hidden" name="pat_id" id="pat_id" Value="<?php echo $keyvalue; ?>">
    <div class="card-body">
    <div class="row">
@@ -322,13 +327,89 @@
    <div class="col-md-1">
    <!-- /.form-group -->
    <div class="form-group">
-   <center><a type="submit" style="margin-top: 32px;" name="submit" class="btn btn-success col submit"><span>Add</span></a> </center>
+   <center><button type="submit" style="margin-top: 32px;" name="addtest" id="addtest" class="btn btn-success col submit"><span>Add</span></button> </center>
+
+
+  </div>
+</div>
+   </div>
+     
+   </form>
+
+
+
+
+</div>
+
+
+
+<div class="container">
+<h3 class="card-title">Patient Details List</h3>
+
+         <hr>
+         <div class="table-responsive">
+            <table id="mytable" class="table table-bordered">
+               <thead>
+                  <tr>
+                     <th>sno</th>
+                     <th>test name</th>
+                     <th>charge</th>
+                     <th>qty</th>
+                     <th>total</th>
+
+                     
+
+
+
+      </tr>
+      </thead>
+      <?php
+      $query=mysqli_query($conn,"SELECT * FROM test_entry");
+      $count=1;
+      while($rows = mysqli_fetch_array($query)){
+         $testname = $rows['test_name'];
+         $charge = $rows['charge'];
+         $qty = $rows['qty'];
+         $total = $rows['total'];
+
+
+         ?>
+      <tbody>
+<tr>
+                     <th><?=$count?></th>
+                     <th><?=$testname?></th>
+                     <th><?=$charge?></th>
+                     <th><?=$qty?></th>
+                     <th><?=$total?></th>
+
+
+                     
+</tr>
+      </tbody>
+      <?php
+      $count++;
+      }
+      ?>
+      
+      </table>
+
+         </div>
+      </div>
    </div>
    </div>
    </div>
    </div>
-   </div>
-   <div class="row">
+
+   
+
+      
+   
+   
+   
+   
+   
+   
+   <!--<div class="row">
    <div class="col-md-1">
    <center><button type="submit" name="submit" class="btn btn-info col submit"><span><?php echo $btn_name; ?></span></button> </center>
    </div>
@@ -336,11 +417,12 @@
    <center><a href="patient_entry.php" type="reset" name="reset" class="btn btn-danger col cancel">
    <i class="fas fa-times-circle"></i><span>Cancel</span></a> </center>
    </div>
-   </div>
-   </form>
+   </div>-->
+ 
 </section>
 <br>
 <!-- /.content -->
+<div class="container">
 <section class="content">
    <div class="container-fluid">
       <!-- SELECT2 EXAMPLE -->
@@ -409,6 +491,7 @@
       </div>
 </section>
 </div>
+</div>
 <?php include('inc/footer.php'); ?>
 <script>
    function funDel(id){
@@ -473,6 +556,11 @@
      
    }
    
-   
+   $(document).ready( function () {
+    $('#mytable').DataTable();
+} );
+
+
 
 </script>
+<!--<script type="text/javascript" src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>-->
