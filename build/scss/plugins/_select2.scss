@@ -181,6 +181,7 @@
       .select2-selection--single,
       .select2-selection--multiple {
         border-color: $input-focus-border-color;
+        height: 38px;
       }
 
       .select2-search__field {
@@ -191,6 +192,7 @@
 
   & .select2-selection--single .select2-selection__rendered li {
     padding-right: 10px;
+    height: 38px;
   }
 
   .input-group-prepend ~ & {

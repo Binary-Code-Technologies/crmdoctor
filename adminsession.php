@@ -13,7 +13,7 @@ if(isset($_SESSION['loginid']) && isset($_SESSION['loginid']) != "")
 		$ipaddress = $cmn->get_client_ip();
 		
 		$loginid = $_SESSION['loginid'];
-	
+	    $usertype = $_SESSION['usertype'];
 		$createdate = date('Y-m-d');	
 		
 		

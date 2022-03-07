@@ -1,3 +1,19 @@
+<?php
+
+include("adminsession.php");
+    //echo "SELECT * FROM company_settings"; 
+       
+
+         // $com_img = $rowcom['com_img'];
+         // $com_name = $rowcom['com_name'];
+
+
+
+
+
+?>
+
+
 <?php include('inc/header.php'); ?>
   <!-- Main Sidebar Container -->
   <?php include('inc/sidemanu.php'); ?>

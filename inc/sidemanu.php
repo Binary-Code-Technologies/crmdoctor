@@ -1,10 +1,20 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">Doctor CRM</span>
-    </a>
+    <?php
 
+$show = mysqli_query($conn,"SELECT * FROM company_settings");
+$rowcom = mysqli_fetch_array($show);
+?>
+    
+    <a href="dashboard.php" class="brand-link">
+      <img src="./uploaded/<?php echo $rowcom['com_img']; ?>" alt="<?php echo $rowcom['com_img']; ?>" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <span class="brand-text font-weight-light"><?php echo $rowcom['com_name']; ?></span>
+    </a>
+<?php
+        $set = mysqli_query($conn,"SELECT * FROM adduser");
+        $rowuser = mysqli_fetch_array($set);
+      //  echo $usertype = $rowuser['usertype']; 
+?>
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
@@ -69,6 +79,12 @@
                 </a>
               </li>
               <li class="nav-item">
+                <a href="adduser.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Users</p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="add_doctor.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add New Doctor</p>
@@ -102,6 +118,25 @@
                 <a href="patient_entry.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Patient Entry</p>
+                </a>
+              </li>
+              
+             
+            </ul>
+            </li>
+            <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-edit"></i>
+              <p>
+              Theraphy Test
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="therapy_entry.php" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Theraphy Test Entry</p>
                 </a>
               </li>
               
