@@ -468,8 +468,6 @@
    function getTotal(){
       var charge = jQuery('#charge').val();
       var qty = jQuery('#qty').val();
-     
-
       var total = charge*qty;
       jQuery('#total').val(total);
      
