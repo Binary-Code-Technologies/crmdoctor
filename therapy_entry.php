@@ -302,21 +302,21 @@
    <!-- /.form-group -->
    <div class="form-group">
    <label>Charge</label>
-   <input type="text" name="charge" id="charge" Value="<?php echo $charge; ?>"  placeholder="Please Enter charge" class="form-control" readonly>
+   <input type="text" name="charge" id="charge" onchange="getTotal();" value="<?php echo $charge; ?>"  placeholder="Please Enter charge" class="form-control" >
    </div>
    </div>
    <div class="col-md-2">
    <!-- /.form-group -->
    <div class="form-group">
    <label>Qty</label>
-   <input type="text" name="qty" id="qty" Value="<?php echo $qty; ?>"  placeholder="Please Enter Qty" class="form-control">
+   <input type="text" name="qty" id="qty" onchange="getTotal();" value="<?php echo $qty; ?>"  placeholder="Please Enter Qty" class="form-control">
    </div>
    </div>
    <div class="col-md-2">
    <!-- /.form-group -->
    <div class="form-group">
    <label>Total</label>
-   <input type="text" name="total" id="total" Value="<?php echo $total; ?>"  placeholder="Total Amount" class="form-control">
+   <input type="text" name="total" id="total" value="<?php echo $total; ?>"  placeholder="Total Amount" class="form-control">
    </div>
    </div>
    <div class="col-md-1">
@@ -463,6 +463,16 @@
            }
           });//ajax close
     
+   }
+
+   function getTotal(){
+      var charge = jQuery('#charge').val();
+      var qty = jQuery('#qty').val();
+     
+
+      var total = charge*qty;
+      jQuery('#total').val(total);
+     
    }
    
    
