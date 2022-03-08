@@ -167,8 +167,24 @@
             <div class="row">
                <div class="col-md-3">
                   <!-- /.form-group -->
+   
                   <div class="form-group">
                      <label>Patient Name</label>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+                     <select name="pat_id" id="pat_id"  class="form-control select2">
+
+                     <option value="">-select-</option>
+                     <?php
+                     $query = mysqli_query($conn,"SELECT * FROM  patient_entry ");
+                     while($row = mysqli_fetch_array($query)){
+                      ?>
+                     <option value="<?php echo $row['pat_id'];?>"><?php echo ucwords($row['patient_name'])?></option>
+                     <?php } ?>
+                     </select>
+=======
+>>>>>>> Stashed changes
                      <select name="pat_id" id="pat_id" onchange="GetDetail(this.value);" class="form-control select2">
                         <option value="">-Select-</option>
                      <?php
@@ -180,6 +196,10 @@
                         <?php } ?>
                      </select>
                      <script>document.getElementById('pat_id').value='<?php echo $pat_id; ?>';</script> 
+<<<<<<< Updated upstream
+=======
+>>>>>>> cd55c1cb3326942585b00f56538d8ecd0a255290
+>>>>>>> Stashed changes
                   </div>
                </div>
                <div class="col-md-3">
@@ -517,6 +537,25 @@
         		  });//ajax close
         	}//confirm close
    }
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+   function Getage(data){
+   //alert('hello')
+   var pat_dob = jQuery('#pat_dob').val();
+   //var opddate = jQuery('#opddate').val();
+
+
+
+   
+   var dob = new Date(pat_dob);
+   //calculate month difference from current date in time
+   var month_diff = Date.now() - dob.getTime();
+   
+   //convert the calculated difference in date format
+   var age_dt = new Date(month_diff); 
+=======
+>>>>>>> Stashed changes
   
    function GetDetail(pat_id){
 
@@ -555,6 +594,7 @@
       jQuery('#total').val(total);
      
    }
+<<<<<<< Updated upstream
    
    $(document).ready( function () {
     $('#mytable').DataTable();
@@ -564,3 +604,21 @@
 
 </script>
 <!--<script type="text/javascript" src="//cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>-->
+=======
+>>>>>>> cd55c1cb3326942585b00f56538d8ecd0a255290
+   
+   
+<<<<<<< HEAD
+   //now calculate the age of the user
+   var age = Math.abs(year - 1970);
+   // alert(age);
+   jQuery('#pat_age').val(age);
+   //display the calculated age
+   //document.write("Age of the date entered: " + age + " years");
+   }    
+</script>
+=======
+
+</script>
+>>>>>>> cd55c1cb3326942585b00f56538d8ecd0a255290
+>>>>>>> Stashed changes
